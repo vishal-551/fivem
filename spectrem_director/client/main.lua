@@ -1,7 +1,7 @@
 local function callback(name,handler) RegisterNUICallback(name,function(data,cb)local ok,result=pcall(handler,data or {});cb({ok=ok,result=result})end) end
 local function send(action,data) data=data or {};data.action=action;SendNUIMessage(data) end
 function SpectremDirector.open() SetNuiFocus(true,true);send('open',{project=SpectremDirector.Project,animations=Config.animations,entities=SpectremDirector.Entities.serialize()}) end
-callback('close',function()SetNuiFocus(false,false)end)
+callback('close',function()SetNuiFocus(false,false);send('close')end)
 callback('spawn',function(data)local record,error=SpectremDirector.Entities.spawn(data.type,data);assert(record,error);return record end)
 callback('remove',function(data)SpectremDirector.Entities.remove(data.id)end)
 callback('animation',function(data)if data.preview then return SpectremDirector.playAnimation(PlayerPedId(),data.animation) end;local e=SpectremDirector.Entities.records[data.id];if e then SpectremDirector.playAnimation(e.handle,data.animation) end end)
