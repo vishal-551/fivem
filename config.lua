@@ -16,3 +16,15 @@ Config.AnimationCategories = {
   { id = 'gestures', label = 'Gestures' }, { id = 'cinematic', label = 'Cinematic' },
   { id = 'ambient', label = 'Ambient' }, { id = 'dance', label = 'Dance' }
 }
+
+-- Phase 3 animation framework defaults.
+Config.Animation = {
+  defaultSpeed = 1.0,
+  defaultLoop = true,
+  blendIn = 4.0,
+  blendOut = -4.0,
+  cacheSize = 24,
+  unusedAssetSeconds = 90,
+  favoriteLimit = 100,
+  debug = false
+}

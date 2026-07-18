@@ -20,6 +20,13 @@ shared_scripts {
 
 client_scripts {
     'modules/callbacks_client.lua',
+    'modules/animation/animation_registry.lua',
+    'modules/animation/animation_search.lua',
+    'modules/animation/animation_cache.lua',
+    'modules/animation/animation_loader.lua',
+    'modules/animation/animation_preview.lua',
+    'modules/animation/animation_favorites.lua',
+    'modules/animation/animation_manager.lua',
     'client/state.lua',
     'client/animations.lua',
     'client/entities.lua',
@@ -36,6 +43,7 @@ server_scripts {
     'modules/permissions.lua',
     'modules/callbacks_server.lua',
     'server/resource_checker.lua',
+    'server/animation/favorites.lua',
     'server/cache_scheduler.lua',
     'server/repository.lua',
     'server/main.lua'
