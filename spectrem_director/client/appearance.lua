@@ -1,0 +1,1 @@
+function SpectremDirector.Appearance.apply(ped,appearance) if not SpectremDirector.Features.appearance then return false,'illenium-appearance unavailable' end;exports['illenium-appearance']:setPedAppearance(ped,appearance);return true end

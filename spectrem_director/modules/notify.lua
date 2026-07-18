@@ -1,0 +1,2 @@
+function SpectremDirector.notify(message,kind) if SpectremDirector.Features.lib then exports.ox_lib:notify({title='Spectrem Director',description=message,type=kind or 'inform'}) else SetNotificationTextEntry('STRING'); AddTextComponentString(message); DrawNotification(false,false) end end
+SpectremDirector.EventBus.register(SpectremDirector.Events.notify,function(message,kind) SpectremDirector.notify(message,kind) end,true)
