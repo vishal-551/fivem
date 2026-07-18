@@ -9,11 +9,17 @@ version '1.0.0'
 shared_scripts {
     '@ox_lib/init.lua',
     'config.lua',
+    'config/core.lua',
+    'shared/config.lua',
+    'modules/logger.lua',
+    'modules/cache.lua',
+    'modules/events.lua',
     'shared/constants.lua',
     'shared/utils.lua'
 }
 
 client_scripts {
+    'modules/callbacks_client.lua',
     'client/state.lua',
     'client/animations.lua',
     'client/entities.lua',
@@ -25,7 +31,12 @@ client_scripts {
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
+    'modules/database.lua',
     'server/permissions.lua',
+    'modules/permissions.lua',
+    'modules/callbacks_server.lua',
+    'server/resource_checker.lua',
+    'server/cache_scheduler.lua',
     'server/repository.lua',
     'server/main.lua'
 }

@@ -1,0 +1,3 @@
+SpectremDirector.Rpc=SpectremDirector.Rpc or { pending={},sequence=0 }
+function SpectremDirector.Rpc.await(name,payload) SpectremDirector.Rpc.sequence=SpectremDirector.Rpc.sequence+1; local id=tostring(SpectremDirector.Rpc.sequence);local p=promise.new();SpectremDirector.Rpc.pending[id]=p;TriggerServerEvent(SpectremDirector.Events.request,id,name,payload);local result=Citizen.Await(p);return result.ok,result.data end
+SpectremDirector.EventBus.register(SpectremDirector.Events.response,function(id,ok,data) local p=SpectremDirector.Rpc.pending[id];if p then SpectremDirector.Rpc.pending[id]=nil;p:resolve({ok=ok,data=data}) end end,true)
