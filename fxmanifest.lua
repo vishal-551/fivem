@@ -50,6 +50,6 @@ server_scripts {
 }
 
 ui_page 'html/index.html'
-files { 'html/index.html', 'html/app.css', 'html/app.js' }
+files { 'html/index.html', 'html/style.css', 'html/app.js' }
 
 dependency { 'qb-core', 'ox_lib', 'oxmysql' }
